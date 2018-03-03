@@ -1,5 +1,5 @@
 # node-microservice-template
-Template for building node microservices using RabbitMQ.
+Template for building node microservices using RabbitMQ built using [coworkers](https://github.com/tjmehta/coworkers).
 
 ## Usage
 Clone the project and fill in all TODO tags in `main.js`.
