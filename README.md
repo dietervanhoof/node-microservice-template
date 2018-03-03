@@ -2,7 +2,7 @@
 Template for building node microservices using RabbitMQ built using [coworkers](https://github.com/tjmehta/coworkers).
 
 ## Usage
-Clone the project and fill in all TODO tags in `main.js`.
+Clone the project and fill in all TODO tags in `main.js`. An example can be found in the [node-subvert](https://github.com/dietervanhoof/node-subvert) repository.
 
 Start the project by running
 ```
