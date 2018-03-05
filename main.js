@@ -86,12 +86,16 @@ listener.initialize(
     ],
     // Error function
     function (err, context) {
-        this.ack = true;
         context.state.response = {
             // TODO: Generate a failed response
         };
+        log.error(`${context.queueName}` + " consumer error: " + err.message);
+
+        let channel = context.consumerChannel; // amqplib promise api: http://www.squaremobius.net/amqp.node/channel_api.html#channel
+        let message = context.message;
+        // nack the message
+        channel.nack(message, false, false);
         context.publish(options.RABBIT_MQ_RESPONSE_QUEUE, options.RABBIT_MQ_RESPONSE_QUEUE, context.state.response, {});
-        log.error(err.message);
     });
 
 // Start listening

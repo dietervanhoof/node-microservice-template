@@ -61,7 +61,7 @@ Listener.prototype.initialize = function(before, processing, after, error) {
 
     this.app.queue(this.config.RABBIT_MQ_REQUEST_QUEUE, consumeOpts, function * () {
         this.ack = true;
-        log.debug("I finished with this message");
+        log.debug("Acking message");
     });
 
     this.app.on('error', error);
